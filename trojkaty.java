@@ -52,11 +52,34 @@ class Trojkaty {
     }
 
 /**
+
+                * Funkcja do sprawdzenia czy trójkąt o podanych bokach może zostać zbudowany.
+
                 * Funkcja zwraca ile par odcinków trójkąta ma jednakową długość.
+
                 * @param {float} a - Długość pierwszego boku.
                 * @param {float} b - Długość drugiego boku.
                 * @param {float} c - Długość trzeciego boku.
                 */
+
+               public static boolean czyIstniejeTrojkat(float a, float b, float c){
+                  if (a + b <= c) return false;
+                  if (a + c <= b) return false;
+                  if (b + c <= a) return false;
+                  return true;
+               }
+               /** Glowna funkcja */
+               public static void main(String... args) {
+                   ...
+                   if (!czyIstniejeTrojkat(a, b, c)) {
+                    System.out.println("Z podanych długości boków nie da się zbudować trójkąta");
+                    System.exit(3);
+                   }
+                   ...
+               }
+            
+
+
                public static int ileJednakowych(float a, float b, float c){
                    int jednakowe = 0; // tutaj zliczamy ile jest jednakowych bokow
                    if (a == b) {
@@ -81,6 +104,7 @@ class Trojkaty {
                        System.out.println("Trójkąt równoramienny");
                    }
                    ...
+
     /** Glowna funkcja */
     public static void main(String... args) {
         if (args.length != 3) {
